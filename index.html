@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Dashboard สรุปรายชื่อ Academic Reputation และ Employer Reputation QS Ranking 2028" />
+    <title>KU QS Ranking 2028 | AR / ER Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="masthead">
+      <div class="masthead__inner">
+        <div class="brand-mark" aria-hidden="true">QS</div>
+        <div>
+          <p class="eyebrow">KASETSART UNIVERSITY</p>
+          <h1>QS Ranking 2028</h1>
+        </div>
+        <div class="masthead__label">Academic &amp; Employer Reputation</div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero" aria-labelledby="dashboard-title">
+        <div>
+          <p class="section-kicker">REPUTATION SUBMISSION OVERVIEW</p>
+          <h2 id="dashboard-title">สรุปรายชื่อที่ได้รับ<br />AR / ER 2028</h2>
+          <p>ติดตามจำนวนรายชื่อที่แต่ละวิทยาเขตและคณะ/ส่วนงานนำส่ง สำหรับการจัดอันดับ QS World University Rankings 2028</p>
+        </div>
+        <p id="updatedAt" class="updated-at"></p>
+      </section>
+
+      <section class="kpis" aria-label="ภาพรวมจำนวนรายชื่อ">
+        <article class="kpi kpi--ar"><span>Academic Reputation</span><strong id="arTotal">0</strong><small>รายชื่อ AR</small></article>
+        <article class="kpi kpi--er"><span>Employer Reputation</span><strong id="erTotal">0</strong><small>รายชื่อ ER</small></article>
+        <article class="kpi kpi--total"><span>Overall Submission</span><strong id="totalCount">0</strong><small>รายชื่อทั้งหมด</small></article>
+        <article class="kpi kpi--campus"><span>Campus Coverage</span><strong id="campusCount">0</strong><small>วิทยาเขตที่ส่งข้อมูล</small></article>
+      </section>
+
+      <section class="panel overview">
+        <div class="panel__heading">
+          <div><p class="section-kicker">CAMPUS VIEW</p><h3>จำนวนรายชื่อตามวิทยาเขต</h3></div>
+          <div class="legend"><span><i class="dot dot--ar"></i>AR</span><span><i class="dot dot--er"></i>ER</span></div>
+        </div>
+        <div id="campusBars" class="campus-bars"></div>
+      </section>
+
+      <section class="panel details">
+        <div class="panel__heading panel__heading--stack">
+          <div><p class="section-kicker">FACULTY / UNIT VIEW</p><h3>จำนวนรายชื่อแยกตามวิทยาเขตและคณะ/ส่วนงาน</h3></div>
+          <div id="filters" class="filters" aria-label="กรองข้อมูลตามวิทยาเขต"></div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>วิทยาเขต</th><th>คณะ/ส่วนงาน</th><th>AR</th><th>ER</th><th>รวม</th></tr></thead>
+            <tbody id="facultyRows"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>คณะกรรมการยุทธศาสตร์ข้อมูลและอันดับโลก &nbsp;|&nbsp; Data Strategy and Global Rankings Committee (DSGR)</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
